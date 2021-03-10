@@ -1,8 +1,7 @@
 const bodyParser = require("body-parser");
+const categorias = require('./categoriasRoute')
 
 module.exports = app => {
     app.use(bodyParser.json())
-    app.get('/', (requisicao, resposta)=>
-        resposta.send('OLA')
-    )
+    app.use(categorias)
 }
