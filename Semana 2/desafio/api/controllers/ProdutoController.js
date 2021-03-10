@@ -1,5 +1,4 @@
 const database = require("../models");
-
 class ProdutoController {
   static async criarProduto(requisicao, resposta) {
     const novoProduto = requisicao.body;
@@ -13,8 +12,8 @@ class ProdutoController {
 
   static async buscarTudo(requisicao, resposta) {
     try {
-      const todasOsProdutos = await database.Produtos.findAll();
-      return resposta.status(200).json(todasOsProdutos);
+      const todosOsProdutos = await database.Produtos.findAll();
+      return resposta.status(200).json(todosOsProdutos);
     } catch (error) {
       return resposta.status(500).json(error.message);
     }
@@ -32,6 +31,17 @@ class ProdutoController {
     } catch (error) {
       return resposta.status(500).json(error.message);
     }
+  }
+
+  static async buscarPorCategoriaAtiva(requisicao,resposta){
+    try {
+        const produtosCategoriaAtiva = await database.Produtos.findAll({
+            where: {id: categoria.buscarPorAtivas}
+        });
+        return resposta.status(200).json(todasOsProdutos);
+      } catch (error) {
+        return resposta.status(500).json(error.message);
+      }
   }
 }
 module.exports = ProdutoController;

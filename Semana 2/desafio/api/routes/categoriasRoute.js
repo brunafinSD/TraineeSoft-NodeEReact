@@ -3,7 +3,9 @@ const CategoriaController = require('../controllers/CategoriaController')
 
 const router = Router()
 
-router.get('/categorias', CategoriaController.buscarTudo)
+
 router.post('/categorias', CategoriaController.criarCategoria)
+router.get('/categorias', CategoriaController.buscarTudo)
+router.get('/categorias/ativas', CategoriaController.buscarPorAtivas)
 
 module.exports = router
