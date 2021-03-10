@@ -32,16 +32,15 @@ class ProdutoController {
       return resposta.status(500).json(error.message);
     }
   }
+///////////FAZENDO/////////////////
+//   static async buscarPorCategoriaAtiva(requisicao,resposta){
+//     try {
 
-  static async buscarPorCategoriaAtiva(requisicao,resposta){
-    try {
-        const produtosCategoriaAtiva = await database.Produtos.findAll({
-            where: {id: categoria.buscarPorAtivas}
-        });
-        return resposta.status(200).json(todasOsProdutos);
-      } catch (error) {
-        return resposta.status(500).json(error.message);
-      }
-  }
+//         }})
+//         return resposta.status(200).json(produtosCategoriaAtiva);
+//       } catch (error) {
+//         return resposta.status(500).json(error.message + ' teste Caiu No Erro');
+//       }
+//   }
 }
 module.exports = ProdutoController;
