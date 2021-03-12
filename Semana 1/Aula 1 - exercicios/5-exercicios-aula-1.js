@@ -1,13 +1,13 @@
 //5 - Corrigir as duas últimas linhas para mostrar a lista corretamente
 
 var list = []
-const databaseInsert = function (data, callback) {​​​​​​​
-    setTimeout(function () {​​​​​​​
+const databaseInsert = function (data, callback) {
+    setTimeout(function () {
         list.push(data);
-        if (callback) {​​​​​​​
+        if (callback) {
             callback();
-        }​​​​​​​
-    }​​​​​​​,);
-}​​​​​​​;
+        }
+    }, 0);
+};
 ///////////////////////
-databaseInsert("a"​​​​​​​, function(){console.log(list)});
+databaseInsert({meuobjeto: "a"}, ()=>{console.log("lista: ", list);});
