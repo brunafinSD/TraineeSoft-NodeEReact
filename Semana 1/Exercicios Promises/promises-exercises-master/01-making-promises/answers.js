@@ -5,9 +5,9 @@
  * 
  * @returns {Promise<3>}
  */
-function makePromiseResolveWith3() {
+function makePromiseResolveWith3(valor) {
   return new Promise((resolve, reject) => {
-    return resolve(3);
+    return resolve(valor);
   });
 }
 
@@ -18,9 +18,8 @@ function makePromiseResolveWith3() {
  * @returns {Promise<,"Boo!">}
  */
 function makePromiseRejectWithBoo(valor){
-  /* IMPLEMENT ME! */
   return new Promise((resolve, reject)=>{
-      return reject("Boo!");
+      return reject(valor);
 
   })
 }
