@@ -36,11 +36,22 @@ const karina = {
  *
  * ****/
 
+
+//aqui ele entra no then e faz o push mas também faz o push no array do catch
+loginApi(william.username, william.password).then(loginsOk.push(william)).catch(loginsError.push(william))
+
+//aqui ele não mostra nada
+loginApi(william.username, william.password).then((resultado)=>{loginsOk.push(resultado)}).catch((resultado)=>{loginsError.push(resultado)})
+
+
+//aqui ele mostra login ok
 loginApi(william.username, william.password).then(console.log).catch(console.log)
 
-loginApi(victor.username, victor.password).then(console.log).catch((console.error))
+//aqui ele mostra invalid password
+loginApi(victor.username, victor.password).then(console.log).catch(console.log)
 
-loginApi(karina.username, karina.password).then(console.log).catch(console.error)
+//aqui ele mostra login ok
+loginApi(karina.username, karina.password).then(console.log).catch(console.log)
 
 console.log("\nLogins Ok")
 console.log(loginsOk)
