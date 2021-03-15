@@ -45,7 +45,7 @@ function exibir(){
     setTimeout(() => {
         console.log("logins OK: \n" + loginsOk)
         console.log("\nlogins Erro: \n" + loginsError)
-    }, 3000);
+    }, 1000);
     
 }
 
