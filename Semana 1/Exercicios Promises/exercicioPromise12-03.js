@@ -36,17 +36,18 @@ const karina = {
  *
  * ****/
 
-loginApi(william.username, william.password).then((resultado)=>{loginsOk.push(resultado)}).catch((resultado)=>{loginsError.push(resultado)})
-loginApi(victor.username, victor.password).then((resultado)=>{loginsOk.push(resultado)}).catch((resultado)=>{loginsError.push(resultado)})
-loginApi(karina.username, karina.password).then((resultado)=>{loginsOk.push(resultado)}).catch((resultado)=>{loginsError.push(resultado)})
+ loginApi(william.username, william.password)
+    .then((resultado)=>{loginsOk.push(resultado)})
+    .catch((resultado)=>{loginsError.push(resultado);})
+        
 
 
-function exibir(){
-    setTimeout(() => {
-        console.log("logins OK: \n" + loginsOk)
-        console.log("\nlogins Erro: \n" + loginsError)
-    }, 1000);
-    
-}
+ loginApi(victor.username, victor.password)
+    .then((resultado)=>{loginsOk.push(resultado)})
+    .catch((resultado)=>{loginsError.push(resultado);})
+        
 
-exibir()
+ loginApi(karina.username, karina.password)
+    .then((resultado)=>{loginsOk.push(resultado)})
+    .catch((resultado)=>{loginsError.push(resultado);})
+        .then(()=>{console.log("Login Sucesso: \n" + loginsOk + "\n\nLogin Erro: \n" + loginsError)})
