@@ -11,6 +11,9 @@ class ListaDeNotas extends Component {
         <li>
           <CardNota></CardNota>
         </li>
+        <li>
+          <CardNota></CardNota>
+        </li>
       </ul>
     );
   }
