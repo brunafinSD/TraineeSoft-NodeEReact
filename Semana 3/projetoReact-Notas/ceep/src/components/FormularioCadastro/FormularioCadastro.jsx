@@ -18,17 +18,17 @@ class FormularioCadastro extends Component {
     this.texto = evento.target.value;
   }
 
-  _criarNota(evento){
+  _criarNota(evento) {
     evento.preventDefault();
     evento.stopPropagation();
     this.props.criarNota(this.titulo, this.texto);
-
   }
 
   render() {
     return (
-      <form className="formulario-cadastro"
-      onSubmit={this._criarNota.bind(this)}
+      <form
+        className="formulario-cadastro"
+        onSubmit={this._criarNota.bind(this)}
       >
         <input
           className="formulario-cadastro_input"
