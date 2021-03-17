@@ -42,6 +42,7 @@ class App extends Component {
     return (
       <section className="conteudo">
         <FormularioCadastro
+          categorias={this.state.categorias}
           criarNota={this.criarNota.bind(this)}
         ></FormularioCadastro>
         <main className="conteudo-principal">
