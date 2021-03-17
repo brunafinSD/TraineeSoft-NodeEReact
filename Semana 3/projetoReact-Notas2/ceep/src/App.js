@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import FormularioCadastro from "./components/FormularioCadastro/";
 import ListaDeNotas from "./components/ListaDeNotas/";
+import ListaDeCategorias from "./components/ListaDeCategorias/"
 import "./assets/App.css";
 import "./assets/index.css";
 
@@ -26,7 +27,7 @@ class App extends Component {
   deletarNota(index) {
     let arrayNotas = this.state.notas;
     arrayNotas.splice(index, 1);
-    this.setState({nota:arrayNotas})
+    this.setState({ nota: arrayNotas });
     console.log("deletar");
   }
 
@@ -36,10 +37,13 @@ class App extends Component {
         <FormularioCadastro
           criarNota={this.criarNota.bind(this)}
         ></FormularioCadastro>
-        <ListaDeNotas
-          apagarNota={this.deletarNota.bind(this)}
-          notas={this.state.notas}
-        ></ListaDeNotas>
+        <main className="conteudo-principal">
+          <ListaDeCategorias></ListaDeCategorias>
+          <ListaDeNotas
+            apagarNota={this.deletarNota.bind(this)}
+            notas={this.state.notas}
+          ></ListaDeNotas>
+        </main>
       </section>
     );
   }

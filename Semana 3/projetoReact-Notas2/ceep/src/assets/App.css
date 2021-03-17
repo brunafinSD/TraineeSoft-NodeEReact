@@ -2,6 +2,10 @@
   display: flex;
 }
 
+.conteudo-principal{
+  flex-grow: 3;
+}
+
 :root {
   --primaria: #4dbbcc;
   --secundaria: #6f47ff;
