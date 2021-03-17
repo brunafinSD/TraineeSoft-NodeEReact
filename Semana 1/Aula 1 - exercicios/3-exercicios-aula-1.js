@@ -76,7 +76,7 @@ categoriaDeProdutos.map(categoria => {
     categoria.produto.map(() => {
         quantidade+=1;
     });
-    categoria.quantidade = quantidade;
+    return categoria.quantidade = quantidade;
 })
 
 console.log(categoriaDeProdutos);
