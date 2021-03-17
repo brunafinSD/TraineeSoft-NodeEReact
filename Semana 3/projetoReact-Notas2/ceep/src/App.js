@@ -11,12 +11,12 @@ class App extends Component {
     this.notas = [];
     this.state = {
       notas: [],
-      categorias: ["trabalho", "esportes"],
+      categorias: ["Teste"],
     };
   }
 
-  criarNota(titulo, texto) {
-    const novaNota = { titulo, texto };
+  criarNota(titulo, texto, categoria) {
+    const novaNota = { titulo, texto, categoria };
     const novoArrayNotas = [...this.state.notas, novaNota];
     const novoEstado = {
       notas: novoArrayNotas,
