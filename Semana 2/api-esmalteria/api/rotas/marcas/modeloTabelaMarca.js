@@ -1,4 +1,4 @@
-
+//arquivo com as caracteristicas da nossa tabela, colunas: nome e email, opções são adicionais do sequelize.
 const Sequelize = require ('sequelize')
 const instancia = require ('../../banco-de-dados')
 

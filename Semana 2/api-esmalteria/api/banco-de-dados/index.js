@@ -1,3 +1,5 @@
+//esse arquivo cria uma instancia de sequelize com os dados do nosso banco
+
 const Sequelize = require("sequelize"); //chama sequelize
 const config = require("config");
 

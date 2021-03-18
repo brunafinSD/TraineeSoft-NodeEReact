@@ -1,3 +1,11 @@
+//esse arquivo tem acesso ao conteúdo da tabela do arquivo modeloTabelaMarca
+// e usa os métodos do sequelize
+//findAll: encontrar Todos
+//findOne: encontrar Um
+//create: criar
+//update: atualizar
+//destroy: deletar
+
 const Modelo = require("./modeloTabelaMarca");
 
 module.exports = {

@@ -1,3 +1,7 @@
+//arquivo da classe Marca com seus atributos e métodos particulares
+//construtor define o que a marca tem
+//pega esses atributos e passa para os métodos do sequelize
+
 const tabelaMarca = require("./tabelaMarca");
 
 class Marca {

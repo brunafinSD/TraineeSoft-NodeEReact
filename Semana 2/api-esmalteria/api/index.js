@@ -1,3 +1,5 @@
+//arquivo raíz, chama os métodos a partir do app.use('/api/marcas', roteador)
+
 const express = require ('express'); //instancia express
 const bodyParser = require ('body-parser'); //instancia body parser
 const roteador = require('./rotas/marcas')

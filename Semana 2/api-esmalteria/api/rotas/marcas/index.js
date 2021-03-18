@@ -1,3 +1,5 @@
+//arquivo que tem todas as rotas para fazer o crud
+
 const roteador = require("express").Router();
 const tabelaMarcas = require("./tabelaMarca.js");
 const Marca = require("./Marca");
