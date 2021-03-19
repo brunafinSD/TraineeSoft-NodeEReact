@@ -32,15 +32,45 @@ class ProdutoController {
       return resposta.status(500).json(error.message);
     }
   }
-///////////FAZENDO/////////////////
-//   static async buscarPorCategoriaAtiva(requisicao,resposta){
-//     try {
 
-//         }})
-//         return resposta.status(200).json(produtosCategoriaAtiva);
-//       } catch (error) {
-//         return resposta.status(500).json(error.message + ' teste Caiu No Erro');
-//       }
-//   }
+  static async buscarPorID(requisicao, resposta) {
+    const { id } = requisicao.params;
+    try {
+      const encontrada = await database.Produtos.findOne({
+        where: {
+          id: Number(id),
+        },
+      });
+      return resposta.status(200).json(encontrada);
+    } catch (error) {
+      return resposta.status(500).json(error.message);
+    }
+  }
+
+  static async atualizarProduto(requisicao, resposta) {
+    const { id } = requisicao.params;
+    const novasInfos = requisicao.body;
+    try {
+      await database.Produtos.update(novasInfos, { where: { id: Number(id) } });
+      const produtoAtualizado = await database.Produtos.findOne({
+        where: { id: Number(id) },
+      });
+      return resposta.status(200).json(produtoAtualizado);
+    } catch (error) {
+      return res.status(500).json(error.message);
+    }
+  }
+
+  static async deletarProduto(requisicao, resposta) {
+    const { id } = requisicao.params;
+    try {
+      await database.Produtos.destroy({ where: { id: Number(id) } });
+      return resposta
+        .status(200)
+        .json({ mensagem: `Produto ${id} foi apagado` });
+    } catch (error) {
+      return resposta.status(500).json(error.message);
+    }
+  }
 }
 module.exports = ProdutoController;

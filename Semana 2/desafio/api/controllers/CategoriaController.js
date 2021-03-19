@@ -20,22 +20,42 @@ class CategoriaController {
       return resposta.status(500).json(error.message);
     }
   }
-  static async buscarPorAtivas(requisicao, resposta) {
+
+  static async buscarPorID(requisicao, resposta) {
+    const { id } = requisicao.params;
     try {
-      const produtoCategoriaAtiva = await database.Categorias.findAll({
+      const encontrada = await database.Categorias.findOne({
         where: {
-          status: true,
-        },
-        include: {
-          model: database.Produtos,
-          where: {
-            preco: {
-              [database.Sequelize.Op.gt]: 10,
-            },
-          },
+          id: Number(id),
         },
       });
-      return resposta.status(200).json(produtoCategoriaAtiva);
+      return resposta.status(200).json(encontrada);
+    } catch (error) {
+      return resposta.status(500).json(error.message);
+    }
+  }
+
+  static async atualizarCategoria(requisicao, resposta) {
+    const { id } = requisicao.params;
+    const novasInfos = requisicao.body;
+    try {
+      await database.Categorias.update(novasInfos, {
+        where: { id: Number(id) },
+      });
+      const categoriaAtualizada = await database.Categorias.findOne({
+        where: { id: Number(id) },
+      });
+      return resposta.status(200).json(categoriaAtualizada);
+    } catch (error) {
+      return res.status(500).json(error.message);
+    }
+  }
+
+  static async deletarCategoria(requisicao, resposta) {
+    const { id } = requisicao.params;
+    try {
+      await database.Categorias.destroy({ where: { id: Number(id) } });
+      return resposta.status(200).json({ mensagem: `Categoria ${id} foi apagada` });
     } catch (error) {
       return resposta.status(500).json(error.message);
     }

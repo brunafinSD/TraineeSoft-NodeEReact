@@ -1,11 +1,16 @@
-const {Router} = require ('express')
-const CategoriaController = require('../controllers/CategoriaController')
+const { Router } = require("express");
+const CategoriaController = require("../controllers/CategoriaController");
 
-const router = Router()
+const router = Router();
 
+//C
+router.post("/categorias", CategoriaController.criarCategoria);
+//R
+router.get("/categorias", CategoriaController.buscarTudo);
+router.get("/categorias/:id", CategoriaController.buscarPorID);
+//U
+router.put("/categorias/:id", CategoriaController.atualizarCategoria);
+//D
+router.delete("/categorias/:id", CategoriaController.deletarCategoria);
 
-router.post('/categorias', CategoriaController.criarCategoria)
-router.get('/categorias', CategoriaController.buscarTudo)
-router.get('/categorias/prodCatAtvM10', CategoriaController.buscarPorAtivas)
-
-module.exports = router
+module.exports = router;
