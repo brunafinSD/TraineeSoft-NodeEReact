@@ -14,7 +14,4 @@ router.put("/produtos/:id", ProdutoController.atualizarProduto);
 //D
 router.delete("/produtos/:id", ProdutoController.deletarProduto);
 
-///////FAZENDO/////
-//router.get('/produtos/categoriaAtiva', ProdutoController.buscarPorCategoriaAtiva)
-////////////////
 module.exports = router;
