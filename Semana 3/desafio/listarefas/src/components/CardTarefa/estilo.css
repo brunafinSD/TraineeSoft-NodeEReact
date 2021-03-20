@@ -1,0 +1,17 @@
+.card-tarefa{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #00ADB8;
+    width: 300px;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  
+  .card-tarefa_btn{
+    display: flex;
+    color: #34c3a1;
+    padding: 5px 10px;
+    margin-left: 20px;
+    border-radius: 10px;
+    background-color: #ffffff;
+  }
