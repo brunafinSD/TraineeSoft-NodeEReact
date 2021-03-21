@@ -1,19 +1,23 @@
 import React, { Component } from "react";
-import "./estilo.css"
+import "./estilo.css";
 
 class CardTarefa extends Component {
   render() {
     return (
       <section className="card-tarefa">
         <header>
-          <h3>ID</h3>
-          <button type="submit" className="card-tarefa_btn">
-            finalizar
-          </button>
+          <h3>{this.props.id}</h3>
         </header>
-        <p>Exemplo de card de tarefa</p>
+        <p>{this.props.descricao}</p>
         <p>finalizada:</p>
-        <label>não</label>
+        <p>{this.props.status ? "Sim" : "Não"}</p>
+        <button
+          type="submit"
+          className="card-tarefa_btn"
+          onClick={() => console.log("botão finalizar clicado")}
+        >
+          finalizar
+        </button>
       </section>
     );
   }

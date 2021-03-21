@@ -2,14 +2,17 @@ import React, { Component } from "react";
 import CardTarefa from "../CardTarefa";
 
 class ListaDeTarefas extends Component {
+  constructor(props){
+    super(props)
+
+  }
   render() {
     return (
       <ul>
-        {Array.of("a fazer", "feito").map((card, index) => {
+        {this.props.tarefas.map((tarefa, index) => {
           return (
             <li key={index}>
-              <div>{card}</div>
-              <CardTarefa></CardTarefa>
+              <CardTarefa id={index+1} descricao={tarefa.descricao} status={tarefa.status}></CardTarefa>
             </li>
           );
         })}

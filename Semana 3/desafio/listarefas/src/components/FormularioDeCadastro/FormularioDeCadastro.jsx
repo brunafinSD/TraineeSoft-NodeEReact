@@ -2,19 +2,36 @@ import React, { Component } from "react";
 import "./estilo.css";
 
 class FormularioDeCadastro extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.descricao = "";
+    this.status = false;
   }
 
   handleMudancaDescricao(evento) {
     this.descricao = evento.target.value;
-    console.log(this.descricao);
+    //console.log(this.descricao);
+  }
+
+  handleMudancaStatus(evento) {
+    this.status = evento.target.value;
+    //console.log(evento.target.value);
+    if (evento.target.value === "sim") {
+      this.status = true;
+    } else if (evento.target.value === "nao") {
+      this.status = false;
+    }
+  }
+
+  criarTarefa(evento) {
+    evento.preventDefault();
+    evento.stopPropagation();
+    this.props.criarTarefa(this.descricao, this.status);
   }
 
   render() {
     return (
-      <form>
+      <form onSubmit={this.criarTarefa.bind(this)}>
         <input
           type="textarea"
           placeholder="digite a descrição da tarefa"
@@ -24,7 +41,13 @@ class FormularioDeCadastro extends Component {
         ></input>
         <p>finalizada?</p>
         <label>Sim</label>
-        <input type="radio" id="sim" name="status" value="sim"></input>
+        <input
+          type="radio"
+          id="sim"
+          name="status"
+          value="sim"
+          onChange={this.handleMudancaStatus.bind(this)}
+        ></input>
         <label>Não</label>
         <input
           type="radio"
@@ -32,6 +55,7 @@ class FormularioDeCadastro extends Component {
           name="status"
           value="nao"
           defaultChecked="checked"
+          onChange={this.handleMudancaStatus.bind(this)}
         ></input>
         <button type="submit" className="form-cadastro_btn_submit">
           add tarefa

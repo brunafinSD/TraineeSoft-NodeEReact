@@ -2,9 +2,10 @@
     display: flex;
     flex-wrap: wrap;
     background-color: #00ADB8;
-    width: 300px;
+    width: 50%;
     padding: 20px;
     margin-top: 20px;
+    align-items: center;
   }
   
   .card-tarefa_btn{
