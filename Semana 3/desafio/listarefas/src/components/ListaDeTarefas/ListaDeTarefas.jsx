@@ -12,7 +12,7 @@ class ListaDeTarefas extends Component {
         {this.props.tarefas.map((tarefa, index) => {
           return (
             <li key={index}>
-              <CardTarefa id={index+1} descricao={tarefa.descricao} status={tarefa.status}></CardTarefa>
+              <CardTarefa descricao={tarefa.descricao} status={tarefa.status}></CardTarefa>
             </li>
           );
         })}

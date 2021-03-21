@@ -4,6 +4,7 @@ import "./estilo.css";
 class FormularioDeCadastro extends Component {
   constructor(props) {
     super(props);
+    this.id = 0;
     this.descricao = "";
     this.status = false;
   }
@@ -24,9 +25,10 @@ class FormularioDeCadastro extends Component {
   }
 
   criarTarefa(evento) {
+    this.id = this.id + 1
     evento.preventDefault();
     evento.stopPropagation();
-    this.props.criarTarefa(this.descricao, this.status);
+    this.props.criarTarefa(this.id, this.descricao, this.status);
   }
 
   render() {

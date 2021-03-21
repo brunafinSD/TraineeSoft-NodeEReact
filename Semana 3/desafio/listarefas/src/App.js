@@ -21,6 +21,15 @@ class App extends Component {
     this.setState(novoEstado);
   }
 
+  // trocarStatus(idCard){
+  //   const tarefaFinalizada = this.tarefas.map((tarefa)=>{
+  //     if(tarefa.idCard === id){
+  //       return{...this.state.tarefa,
+  //       status: true}
+  //     }return tarefa;
+  //   })
+  // }
+
   render() {
     return (
       <section className="form-cadastro">
