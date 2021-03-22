@@ -1,18 +1,31 @@
+.card-tarefa_box{
+  display: flex;
+  justify-content: center;
+}
+
 .card-tarefa{
     display: flex;
     flex-wrap: wrap;
     background-color: #00ADB8;
-    width: 50%;
+    width: 450px;
     padding: 20px;
     margin-top: 20px;
     align-items: center;
   }
+  .card-tarefa_descricao{
+    width: 500px;
+    margin-bottom: 10px;
+  }
   
   .card-tarefa_btn{
     display: flex;
-    color: #34c3a1;
+    color: #899ba0;
     padding: 5px 10px;
     margin-left: 20px;
     border-radius: 10px;
     background-color: #ffffff;
+  }
+  
+  .card-tarefa_btn:hover{
+    color:#34c3a1
   }

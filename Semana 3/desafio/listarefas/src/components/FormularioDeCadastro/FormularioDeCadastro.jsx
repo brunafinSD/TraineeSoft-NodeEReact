@@ -11,12 +11,10 @@ class FormularioDeCadastro extends Component {
 
   handleMudancaDescricao(evento) {
     this.descricao = evento.target.value;
-    //console.log(this.descricao);
   }
 
   handleMudancaStatus(evento) {
     this.status = evento.target.value;
-    //console.log(evento.target.value);
     if (evento.target.value === "sim") {
       this.status = true;
     } else if (evento.target.value === "nao") {
@@ -30,7 +28,6 @@ class FormularioDeCadastro extends Component {
     const contador = this.id + 1
     this.id = contador
     this.props.criarTarefa(this.descricao, this.status, this.id);
-    //console.log(this.id)
   }
 
   render() {

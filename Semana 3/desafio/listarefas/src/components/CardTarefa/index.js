@@ -1,2 +1,2 @@
-import CardTarefa from "./CardTarefa"
+import CardTarefa from "./CardTarefa";
 export default CardTarefa;

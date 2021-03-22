@@ -22,17 +22,11 @@ class App extends Component {
   }
 
   atualizarStatus(id) {
-    console.log("entrou aqui");
-    console.log(id);
-
     const tarefaAtualizada = this.state.tarefas.map((tarefa) => {
       if (tarefa.id === id) {
-        console.log("entrou")
         tarefa.status = true;
-        console.log(tarefa)
       }
     });
-
     this.setState(tarefaAtualizada);
   }
 
