@@ -40,6 +40,7 @@ class FormularioDeCadastro extends Component {
           maxLength="50"
           onChange={this.handleMudancaDescricao.bind(this)}
         ></input>
+        <div className="form-cadastro_box_inputs">
         <p>finalizada?</p>
         <label>Sim</label>
         <input
@@ -58,6 +59,8 @@ class FormularioDeCadastro extends Component {
           defaultChecked="checked"
           onChange={this.handleMudancaStatus.bind(this)}
         ></input>
+        </div>
+
         <button type="submit" className="form-cadastro_btn_submit">
           add tarefa
         </button>

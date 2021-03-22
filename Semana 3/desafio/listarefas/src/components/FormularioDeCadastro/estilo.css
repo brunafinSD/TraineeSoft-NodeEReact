@@ -16,6 +16,10 @@
   
   }
   
+  .form-cadastro_box_inputs{
+    margin-bottom: 20px;
+  }
+
   .form-cadastro p, label{
     color: #ffffff;
     margin-left: 20px;
