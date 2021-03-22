@@ -12,8 +12,8 @@ class App extends Component {
     };
   }
 
-  criarTarefa(descricao, status) {
-    const novaTarefa = {descricao, status };
+  criarTarefa(descricao, status, id) {
+    const novaTarefa = { descricao, status, id };
     const novoArrayTarefas = [...this.state.tarefas, novaTarefa];
     const novoEstado = {
       tarefas: novoArrayTarefas,

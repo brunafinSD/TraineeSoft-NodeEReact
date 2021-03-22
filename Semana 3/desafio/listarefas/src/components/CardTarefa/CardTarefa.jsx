@@ -6,7 +6,7 @@ class CardTarefa extends Component {
     return (
       <section className="card-tarefa">
         <header>
-          <h3>ID</h3>
+          <h3>{this.props.id}</h3>
         </header>
         <p>{this.props.descricao}</p>
         <p>finalizada:</p>
@@ -14,7 +14,7 @@ class CardTarefa extends Component {
         <button
           type="submit"
           className="card-tarefa_btn"
-          onClick={() => console.log("botão finalizar clicado")}
+          onClick={() => console.log("botão de finalizar clicado")}
         >
           finalizar
         </button>

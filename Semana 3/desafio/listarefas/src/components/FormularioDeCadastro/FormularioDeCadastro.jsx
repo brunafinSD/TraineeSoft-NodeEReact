@@ -6,6 +6,7 @@ class FormularioDeCadastro extends Component {
     super(props);
     this.descricao = "";
     this.status = false;
+    this.id = 0;
   }
 
   handleMudancaDescricao(evento) {
@@ -26,7 +27,10 @@ class FormularioDeCadastro extends Component {
   criarTarefa(evento) {
     evento.preventDefault();
     evento.stopPropagation();
-    this.props.criarTarefa(this.descricao, this.status);
+    const contador = this.id + 1
+    this.id = contador
+    this.props.criarTarefa(this.descricao, this.status, this.id);
+    //console.log(this.id)
   }
 
   render() {
