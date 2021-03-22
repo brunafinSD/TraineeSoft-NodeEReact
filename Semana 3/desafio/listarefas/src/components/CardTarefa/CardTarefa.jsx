@@ -2,6 +2,11 @@ import React, { Component } from "react";
 import "./estilo.css";
 
 class CardTarefa extends Component {
+  atualizarStatus(id) {
+    const idTarefa = this.props.id
+    this.props.atualizarStatus(idTarefa);
+  }
+
   render() {
     return (
       <section className="card-tarefa">
@@ -14,7 +19,7 @@ class CardTarefa extends Component {
         <button
           type="submit"
           className="card-tarefa_btn"
-          onClick={() => console.log("botão de finalizar clicado")}
+          onClick={this.atualizarStatus.bind(this)}
         >
           finalizar
         </button>

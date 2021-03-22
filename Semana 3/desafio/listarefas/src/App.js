@@ -21,13 +21,31 @@ class App extends Component {
     this.setState(novoEstado);
   }
 
+  atualizarStatus(id) {
+    console.log("entrou aqui");
+    console.log(id);
+
+    const tarefaAtualizada = this.state.tarefas.map((tarefa) => {
+      if (tarefa.id === id) {
+        console.log("entrou")
+        tarefa.status = true;
+        console.log(tarefa)
+      }
+    });
+
+    this.setState(tarefaAtualizada);
+  }
+
   render() {
     return (
       <section className="form-cadastro">
         <FormularioDeCadastro
           criarTarefa={this.criarTarefa.bind(this)}
         ></FormularioDeCadastro>
-        <ListaDeTarefas tarefas={this.state.tarefas}></ListaDeTarefas>
+        <ListaDeTarefas
+          atualizarStatus={this.atualizarStatus.bind(this)}
+          tarefas={this.state.tarefas}
+        ></ListaDeTarefas>
       </section>
     );
   }

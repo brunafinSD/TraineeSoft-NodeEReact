@@ -12,6 +12,7 @@ class ListaDeTarefas extends Component {
           return (
             <li key={index}>
               <CardTarefa
+                atualizarStatus={this.props.atualizarStatus}
                 descricao={tarefa.descricao}
                 status={tarefa.status}
                 id={tarefa.id}
