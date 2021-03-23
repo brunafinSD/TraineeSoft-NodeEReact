@@ -33,7 +33,7 @@ class CardTarefa extends Component {
         {/* Extra */}
         <button
           type="submit"
-          className="card-tarefa_btn"
+          className="card-tarefa_btn_del"
           onClick={this.deletarTarefa.bind(this)}
         >
           deletar

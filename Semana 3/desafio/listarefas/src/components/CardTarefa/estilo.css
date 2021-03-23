@@ -29,3 +29,16 @@
   .card-tarefa_btn:hover{
     color:#34c3a1
   }
+
+  .card-tarefa_btn_del{
+    display: flex;
+    color: #899ba0;
+    padding: 5px 10px;
+    margin-left: 20px;
+    border-radius: 10px;
+    background-color: #ffffff;
+  }
+
+  .card-tarefa_btn_del:hover{
+    color: rgb(255, 19, 19);
+  }
