@@ -2,25 +2,24 @@ import React, { Component } from "react";
 import ListaDeTarefas from "./components/ListaDeTarefas/";
 import FormularioDeCadastro from "./components/FormularioDeCadastro/";
 import "./assets/index.css";
-import ArrayTarefas from "./dados/Tarefas";
 
 class App extends Component {
   constructor() {
     super();
-    this.tarefas = new ArrayTarefas();
-    // this.state = {
-    //   tarefas: [],
-    // };
+
+    this.state = {
+      tarefas: [],
+    };
   }
 
-  // criarTarefa(descricao, status, id) {
-  //   const novaTarefa = { descricao, status, id };
-  //   const novoArrayTarefas = [...this.state.tarefas, novaTarefa];
-  //   const novoEstado = {
-  //     tarefas: novoArrayTarefas,
-  //   };
-  //   this.setState(novoEstado);
-  // }
+  criarTarefa(descricao, status, id) {
+    const novaTarefa = { descricao, status, id };
+    const novoArrayTarefas = [...this.state.tarefas, novaTarefa];
+    const novoEstado = {
+      tarefas: novoArrayTarefas,
+    };
+    this.setState(novoEstado);
+  }
 
   atualizarStatus(id) {
     const tarefaAtualizada = this.state.tarefas.map((tarefa) => {
@@ -33,23 +32,22 @@ class App extends Component {
 
   //função extra
   deletarTarefa(id) {
-    const arrayTarefaDeletada = this.state.tarefas;
-    var indice = arrayTarefaDeletada.findIndex((tarefa) => tarefa.id === id); //findIndex pega o index do array
-    arrayTarefaDeletada.splice(indice, 1);
-    this.setState(arrayTarefaDeletada);
+    const arrayTarefaDeletada = this.state.tarefas
+    var indice = arrayTarefaDeletada.findIndex(tarefa=>tarefa.id === id) //findIndex pega o index do array
+    arrayTarefaDeletada.splice(indice, 1)
+    this.setState(arrayTarefaDeletada)
   }
 
   render() {
     return (
       <section className="form-cadastro">
         <FormularioDeCadastro
-          criarTarefa={this.tarefas.criarTarefa}
+          criarTarefa={this.criarTarefa.bind(this)}
         ></FormularioDeCadastro>
         <ListaDeTarefas
           deletarTarefa={this.deletarTarefa.bind(this)}
           atualizarStatus={this.atualizarStatus.bind(this)}
-          //tarefas={this.state.tarefas}
-          tarefas={this.tarefas.tarefas}
+          tarefas={this.state.tarefas}
         ></ListaDeTarefas>
       </section>
     );
