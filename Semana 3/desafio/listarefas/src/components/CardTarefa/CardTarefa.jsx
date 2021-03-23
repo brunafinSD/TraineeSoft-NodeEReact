@@ -7,6 +7,12 @@ class CardTarefa extends Component {
     this.props.atualizarStatus(idTarefa);
   }
 
+  //função extra
+  deletarTarefa(id) {
+    const idTarefa = this.props.id;
+    this.props.deletarTarefa(idTarefa);
+  }
+
   render() {
     return (
       <div className="card-tarefa_box">
@@ -23,6 +29,14 @@ class CardTarefa extends Component {
           onClick={this.atualizarStatus.bind(this)}
         >
           finalizar
+        </button>
+        {/* Extra */}
+        <button
+          type="submit"
+          className="card-tarefa_btn"
+          onClick={this.deletarTarefa.bind(this)}
+        >
+          deletar
         </button>
       </section>
       </div>
