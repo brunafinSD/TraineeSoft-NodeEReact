@@ -12,7 +12,7 @@ function FormularioCadastro({criarTarefa}) {
   const [descricao, setDescricao] = useState("");
   const [status, setStatus] = useState(false);
   const [id, setId] = useState(1);
-  //   const [status_switch, setStatusSwitch] = useState(false); //finalizar com botão interruptor
+  //  const [status_switch, setStatusSwitch] = useState(false); //finalizar com botão interruptor
 
   return (
     <form

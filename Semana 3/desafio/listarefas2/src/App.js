@@ -9,20 +9,38 @@ function App() {
   console.log(tarefas);
 
   const criarTarefa = (dados) => {
-    const tarefaNova = dados
-    const novaTarefa = [...tarefas, tarefaNova]
+    const tarefaNova = dados;
+    const novaTarefa = [...tarefas, tarefaNova];
     setTarefas(novaTarefa);
-
-
   };
+
+  const atualizarTarefa = (id) => {
+    const atualizaTarefa = tarefas.map((tarefa) => {
+      if (tarefa.id === id) {
+        tarefa.status = true;
+        return tarefa;
+      } else {
+        return tarefa;
+      }
+    });
+    setTarefas(atualizaTarefa);
+  };
+
+  const apagarTarefa = (id) => {
+    const listaAtualizada = tarefas.filter((tarefa) => tarefa.id !== id);
+    setTarefas(listaAtualizada);
+  };
+
   return (
     <Container component="article" maxWidth="sm">
       <FormularioCadastro criarTarefa={criarTarefa}></FormularioCadastro>
-      <ListaDeTarefas tarefas={tarefas}></ListaDeTarefas>
+      <ListaDeTarefas
+        tarefas={tarefas}
+        atualizarTarefa={atualizarTarefa}
+        apagarTarefa={apagarTarefa}
+      ></ListaDeTarefas>
     </Container>
   );
 }
-
-
 
 export default App;

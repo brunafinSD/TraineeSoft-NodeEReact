@@ -13,7 +13,7 @@ class ListaDeTarefas extends Component {
             <li key={index}>
               <CardTarefa
                 deletarTarefa={this.props.deletarTarefa}
-                atualizarStatus={this.props.atualizarStatus}
+                atualizarStatus={thisco.props.atualizarStatus}
                 descricao={tarefa.descricao}
                 status={tarefa.status}
                 id={tarefa.id}
