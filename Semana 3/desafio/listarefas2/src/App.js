@@ -8,11 +8,15 @@ class App extends Component {
   render() {
     return (
       <Container component="article" maxWidth="sm">
-        <FormularioCadastro></FormularioCadastro>
+        <FormularioCadastro aoEnviar={aoEnviarForm}></FormularioCadastro>
         <ListaDeTarefas></ListaDeTarefas>
       </Container>
     );
   }
+}
+
+function aoEnviarForm(dados){
+  console.log(dados)
 }
 
 export default App;
