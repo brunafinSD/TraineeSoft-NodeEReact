@@ -1,22 +1,34 @@
-import { Component } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import FormularioCadastro from "./components/FormularioCadastro/FormularioCadastro";
-import { Container} from "@material-ui/core";
+import { Container } from "@material-ui/core";
 import ListaDeTarefas from "./components/ListaDeTarefas/ListaDeTarefas";
 
-class App extends Component {
-  render() {
-    return (
-      <Container component="article" maxWidth="sm">
-        <FormularioCadastro aoEnviar={aoEnviarForm}></FormularioCadastro>
-        <ListaDeTarefas></ListaDeTarefas>
-      </Container>
-    );
-  }
+const listaTarefas = [
+  {
+    descricao: "teste",
+    status: true,
+    id: 1,
+  },
+];
+
+function App() {
+  const [tarefas, setTarefas] = useState(listaTarefas);
+  console.log(tarefas);
+
+  const criarTarefa = (dados) => {
+    const tarefaNova = dados
+    const novaTarefa = [...tarefas, tarefaNova]
+    setTarefas(novaTarefa);
+  };
+  return (
+    <Container component="article" maxWidth="sm">
+      <FormularioCadastro criarTarefa={criarTarefa}></FormularioCadastro>
+      <ListaDeTarefas></ListaDeTarefas>
+    </Container>
+  );
 }
 
-function aoEnviarForm(dados){
-  console.log(dados)
-}
+
 
 export default App;

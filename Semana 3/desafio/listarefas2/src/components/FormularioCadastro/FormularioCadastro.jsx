@@ -5,24 +5,28 @@ import {
   Radio,
   RadioGroup,
   FormControlLabel,
-  Switch,
+  //Switch,
 } from "@material-ui/core";
 
-function FormularioCadastro({aoEnviar}) {
-  const [nome, setNome] = useState("");
+function FormularioCadastro({criarTarefa}) {
+  const [descricao, setDescricao] = useState("");
   const [status, setStatus] = useState(false);
-//   const [status_switch, setStatusSwitch] = useState(false); //finalizar com botão interruptor
+  const [id, setId] = useState(1);
+  //   const [status_switch, setStatusSwitch] = useState(false); //finalizar com botão interruptor
+
   return (
     <form
       onSubmit={(event) => {
         event.preventDefault();
-        aoEnviar({nome, status})
+        let contador = id + 1
+        setId(contador)
+        criarTarefa({ descricao, status, id });
       }}
     >
       <TextField
-        value={nome}
+        value={descricao}
         onChange={(event) => {
-          setNome(event.target.value);
+          setDescricao(event.target.value);
         }}
         id="outlined-basic"
         label="digite a descrição da tarefa"
